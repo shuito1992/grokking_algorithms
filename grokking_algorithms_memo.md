@@ -101,10 +101,151 @@ puts binary_search(list, -1).inspect #=> nil
 
 ### 単語
 
-
+* `crucial` 極めて重要な
+* `monsieur [məsjˈəː]` 紳士(フランス語)
+* `contiguously [kəntígjuəs]` 連続して
+* `take up` 取り上げる
+* `workaround` 回避策
+* `stick` 貼る
+* `scummy [skˈʌmi]` 怖い
+* `tactic` 戦術
+* `villain [vílən]` 悪党
+* `in a (flat) spin` 混乱状態で
+* `gist` 要旨
+* `strewn [ˈstrʊən]` ばらばらの、strew(撒き散らす)の過去分詞
 
 ### 文
 
+### コード
 
+02_selection_sort
+```rb
+# Finds the smallest value in an array
+def find_smallest(arr)
+  smallest = arr[0]
+  smallest_index = 0
+  (1...(arr.length)).each do |i|
+    if arr[i] < smallest
+      smallest = arr[i]
+      smallest_index = i
+    end
+  end
+  smallest_index
+end
+
+# Sort array
+def selection_sort(arr)
+  new_arr = []
+  arr.length.times do
+    # Finds the smallest element in the array and adds it to the new array
+    smallest = find_smallest(arr)
+    new_arr.push(arr.delete_at(smallest))
+  end
+  new_arr
+end
+
+p selection_sort([5, 3, 6, 2, 10])
+```
+
+## ch3
+
+### 単語
+
+* `divisive [dɪvάɪsɪv]` 不和を起こさせる
+* `pseudo [súːdou]` 疑似の
+* `attic` 屋根裏
+* `a pile of` 山積みの
+* `call stack` プログラムで実行中のサブルーチンに関する情報を格納するスタックである。 実行中のサブルーチンとは、呼び出されたが処理を完了していないサブルーチンを意味する。([Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%BC%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF))
+* `stack` 積む
+* `take off` はずす、取り除く
+* `take up` 取り上げる
+
+### 文
+
+p42
+> Suppose you’re throwing a barbecue. You keep a todo list for the barbecue, in the form of a stack of sticky notes.
+p43
+> `print` is a function in Python, but to make things easier for this example, we’re pretending it isn’t. Just play along.
+p44
+> Now that you’re done with the greet2 function, you’re back to the greet function, and you pick up where you left off.
 
 ### コード
+
+03_box_searching
+```rb
+# While approach
+def look_for_key(main_box)
+  pile = main_box.make_a_pile_to_look_through
+  while !pile.empty?
+    box = pile.grab_a_box
+    box.each do |item|
+      if item.is_a_box?
+        pile.push(item)
+      elsif item.is_a_key?
+        puts "found the key!"
+      end
+    end
+  end
+end
+
+# Recursion approach
+def look_for_key(box)
+  box.each do |item|
+    if item.is_a_box?
+      look_for_key(item) # Recursion
+    elsif item.is_a_key?
+      puts "found the key!"
+    end
+  end
+end
+```
+
+03_countdown
+```ruby
+def countdown(i)
+  puts i
+  # Base case
+  if i <= 0 
+    return
+  # Recursive case
+  else
+    countdown(i-1)
+end
+
+countdown(5)
+```
+
+03_call_stack
+```rb
+def greet(name)
+  puts "hello, #{name}!"
+  greet2(name)
+  end
+  puts "getting ready to say bye..."
+  bye
+end
+
+def greet2(name)
+  puts "how are you, #{name}?"
+end
+
+def bye
+  puts "ok! bye!"
+end
+
+greet("Maggie")
+```
+
+03_factorial
+```rb
+def fact(x)
+  if x == 1
+    return 1
+  else
+    return x * fact(x-1)
+  end
+end
+
+fact(5)
+```
+
