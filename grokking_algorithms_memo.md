@@ -2,7 +2,7 @@
 
 ## 進捗
 
-ch1(p2)
+ch4~ p53
 
 (注)全 11 Chapters
 
@@ -41,6 +41,7 @@ ch1(p2)
 
 pxv
 >  Instead of writing symbol soup, my goal is to make it easy for you to visualize these concepts.
+
 pxv
 >  Also, at the risk of stating the obvious, I’m a visual learner.
 
@@ -61,6 +62,9 @@ pxv
 * `recap [ríːkæp]` 要約する
 
 ### 文
+
+p17
+> This is a famous problem in computer science, because its growth is appalling and some very smart people think it can’t be improved.
 
 p19
 > One final note: if you’re an advanced reader, check out binary search trees! There’s a brief description of them in the last chapter.
@@ -159,15 +163,20 @@ p selection_sort([5, 3, 6, 2, 10])
 * `stack` 積む
 * `take off` はずす、取り除く
 * `take up` 取り上げる
+* `tail recursion` [末尾再帰](https://ja.wikipedia.org/wiki/%E6%9C%AB%E5%B0%BE%E5%86%8D%E5%B8%B0)
 
 ### 文
 
 p42
 > Suppose you’re throwing a barbecue. You keep a todo list for the barbecue, in the form of a stack of sticky notes.
+
 p43
 > `print` is a function in Python, but to make things easier for this example, we’re pretending it isn’t. Just play along.
+
+=> `print`はメソッド呼び出しだが、その分のコールスタックは無視して説明しているということ。
+
 p44
-> Now that you’re done with the greet2 function, you’re back to the greet function, and you pick up where you left off.
+> Now that you’re done with the `greet2` function, you’re back to the greet function, and you pick up where you left off.
 
 ### コード
 
@@ -249,3 +258,101 @@ end
 fact(5)
 ```
 
+## ch4
+
+### 単語
+
+* `meat` 肉、内容、実質
+* `stump` 悩ます、困らせる
+* `plot` 小区画の地所
+* `evenly` むらなく
+* `stuck` 行き詰まった
+* `sneak` コソコソする
+* `sneak peak` 先行上映
+* `nicety` 正確さ、機微
+* `partition` 分割
+* `inductive` 帰納的
+* `rung` (はしごなどの)横木、段
+* `hand in hand` 協力して
+* `way` はるかに、うんと
+
+
+### 文
+
+p54
+>  If you find the biggest box that will work for this size, that will be the biggest box  that will work for the entire farm.
+
+
+
+
+### コード
+
+04_
+```rb
+# ユークリッドの互除法
+def euclid(smaller, larger)
+  mod = larger % smaller
+  return smaller if mod == 0
+  return euclid(mod, smaller)
+end
+
+euclid(1680, 640)
+
+# Recursive sum
+def sum(arr)
+  return 0 if arr.empty?
+  return arr.shift + sum(arr)
+end
+
+sum([1,2,3,4])
+
+# Recursive count
+def count(list)
+  return 0 if list.empty?
+  return 1 + count(list[0..-2])
+end
+
+count([1]*10)
+
+# Recursive max
+def max(list)
+  return -Float::INFINITY if list.empty?
+  first = list.shift
+  remaining_max = max(list)
+  return first > remaining_max ? first : remaining_max
+end
+
+max([1,3,5,7,2])
+
+# Recursive binary search
+#TODO 存在しない場合の例外処理ができていない
+def binary_search(list, answer, index=0)
+  row  = 0
+  high = list.length - 1
+  mid  = (row + high) / 2
+  mid_value = list[mid]
+  return nil if list.empty?
+  if answer == mid_value
+    return index + mid
+  elsif answer < mid_value
+    binary_search(list[0..(mid-1)], answer, index)
+  elsif answer > mid_value
+    binary_search(list[(mid+1)..-1], answer, index + mid + 1)
+  end
+end
+
+binary_search([1, 3, 5, 7, 9], 3)
+```
+
+04_quicksort
+```rb
+def quicksort(arr)
+  return arr if arr.length < 2
+  pivot = arr[1]
+  smaller = arr.select{|element| element < pivot}
+  larger  = arr.select{|element| element > pivot}
+  same    = arr.select{|element| element == pivot}
+  return quicksort(smaller) + same + quicksort(larger)
+end
+
+quicksort([5,2,1,7,10,9,11,100,17])
