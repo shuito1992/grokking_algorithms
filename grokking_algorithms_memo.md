@@ -275,15 +275,12 @@ fact(5)
 * `rung` (はしごなどの)横木、段
 * `hand in hand` 協力して
 * `way` はるかに、うんと
-
+* `multiplication` 掛け算
 
 ### 文
 
 p54
 >  If you find the biggest box that will work for this size, that will be the biggest box  that will work for the entire farm.
-
-
-
 
 ### コード
 
@@ -309,7 +306,7 @@ sum([1,2,3,4])
 # Recursive count
 def count(list)
   return 0 if list.empty?
-  return 1 + count(list[0..-2])
+  return 1 + count(list[1..-1])
 end
 
 count([1]*10)
@@ -348,7 +345,7 @@ binary_search([1, 3, 5, 7, 9], 3)
 ```rb
 def quicksort(arr)
   return arr if arr.length < 2
-  pivot = arr[1]
+  pivot = arr[0]
   smaller = arr.select{|element| element < pivot}
   larger  = arr.select{|element| element > pivot}
   same    = arr.select{|element| element == pivot}
