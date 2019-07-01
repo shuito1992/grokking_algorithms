@@ -353,3 +353,135 @@ def quicksort(arr)
 end
 
 quicksort([5,2,1,7,10,9,11,100,17])
+```
+
+## ch5
+
+### 単語
+
+* `collision [kəlíʒən]` 衝突
+* `produce` 作物
+* `darn` とても、ひどく
+* `steam up` 怒る、怒らせる
+* `buddy` 仲間
+* `discernable [disə́ːrn]` 認識できる
+* `map` 写像する
+* `booth` 屋台店、小屋
+* `niece` 姪
+* `tailor` 仕立てる
+* `Terms and Conditions` 規約と条件
+* `white lie` 罪のない嘘
+* `work around` 回避する
+* `peek` ちらっと覗く
+* `a rule of thumb` 経験則
+* `business` 取引
+* `beard` 髭
+
+### 文
+
+p75
+> Let’s put on our data structure hats.
+
+### コード
+
+05_vote
+```rb
+@voted = {}
+
+def check_voter(name)
+  if @voted.key?(name)
+    puts "kick them out."
+  else
+    @voted[name] = true
+    puts "let them vote!"
+  end
+end
+
+check_voter("tom")
+check_voter("mike")
+check_voter("mike")
+```
+
+05_cache
+```rb
+@cache = {}
+
+def get_page(url)
+  if cache.key?(url)
+    return cache[url]
+  else
+    data = get_data_from_server(url)
+    chache[url] = data
+    return data
+  end
+end
+```
+
+## ch6
+
+### 単語
+
+* `topological` 位相幾何学の
+* `breadth [brédθ]` 幅
+* `radiate` 放射状に伸びる
+* `queue` 列、並ぶ
+
+
+### 文
+
+p98
+> For example, suppose you and your friends are playing poker, and you want to model who owes whom money. 
+
+=> 誰が誰にいくら借りがあるか。
+
+p 107
+>  In Python, you use the double-ended queue (deque) function for this:
+
+### コード
+
+06_breadth_first_search
+```rb
+@graph = {}
+@graph["you"]    = ["alice", "bob", "claire"]
+@graph["bob"]    = ["anuj", "peggy"]
+@graph["alice"]  = ["peggy"]
+@graph["claire"] = ["thom", "jonny"]
+@graph["anuj"]   = ["bob"]
+@graph["peggy"]  = []
+@graph["thom"]   = []
+@graph["jonny"]  = []
+
+def mango_seller?(name)
+  name[-1] == "m"
+end
+def search(name)
+  search_queue = []
+  search_queue += @graph[name]
+  searched = []
+  while !search_queue.empty?
+    person = search_queue.shift
+    if !searched.include?(person)
+      if mango_seller?(person)
+        return "#{person} is a mango seller!"
+      else
+        search_queue += @graph[person]
+        searched << person
+      end
+    end
+  end
+  return "No mango seller."
+end
+
+search("you")
+```
+
+## ch7
+
+### 単語
+
+
+### 文
+
+
+### コード
+
