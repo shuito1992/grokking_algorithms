@@ -551,9 +551,58 @@ puts @parents
 
 ### 単語
 
+* `loot` 略奪
+* `takeaway` 持ち帰り
+* `power set` 冪集合
+* `at right` 右記
+* `on ramp` 進入路
+* `FedEx` 国際輸送サービスを提供する航空貨物輸送会社
+* `flown` flyの過去分子 
+* `NP-complete problem` NP完全問題(Non-deterministic Polynomial)
+* `giveaways` プレゼント、景品
+* `set-covering problem` [集合被覆問題](https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E8%A2%AB%E8%A6%86%E5%95%8F%E9%A1%8C)
+* `clique` (排他的な)徒党、派閥
+* `adjacent` 隣接した
 
 ### 文
 
+p
+> *EXERCISES*
+> For each of these algorithms, say whether it’s a greedy algorithm or not.
+> * 8.3 Quicksort
+> * 8.4 Breadth-first search
+> * 8.5 Dijkstra’s algorithm
 
 ### コード
+
+08_greedy_algorithm
+```rb
+states_needed = ["mt", "wa", "or", "id", "nv", "ut", "ca", "az"]
+stations = {
+  "kone"   => ["id", "nv", "ut"],
+  "ktwo"   => ["wa", "id", "mt"],
+  "kthree" => ["or", "nv", "ca"],
+  "kfour"  => ["nv", "ut"],
+  "kfive"  => ["ca", "az"]
+}
+final_stations = []
+
+while !states_needed.empty?
+  best_station = nil
+  states_covered = []
+  stations.each do |station, covered_by_station|
+    covered = states_needed & covered_by_station
+    if covered.size > states_covered.size
+      best_station   = station
+      states_covered = covered
+    end
+  end
+  states_needed -= states_covered
+  final_stations << best_station
+end
+
+puts final_stations
+```
+
+## ch9
 
