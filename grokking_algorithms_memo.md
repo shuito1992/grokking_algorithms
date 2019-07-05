@@ -425,6 +425,7 @@ end
 * `breadth [brédθ]` 幅
 * `radiate` 放射状に伸びる
 * `queue` 列、並ぶ
+* `vertice` 頂点
 
 
 ### 文
@@ -476,6 +477,77 @@ search("you")
 ```
 
 ## ch7
+
+### 単語
+
+* `Dijkstra’s algorithm` [ダイクストラ法](https://ja.wikipedia.org/wiki/%E3%83%80%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9%E6%B3%95)
+* `segment` 区切り
+* `put down` 置く
+* `acyclic` 非環式の
+* `I've been meaning to` ずっと～しようと思っていた
+* `dough` パン生地、金銭
+* `red flag` (危険・警戒・停止信号としての)赤旗
+* `Bellman–Ford algorithm` [ベルマン–フォード法](https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%9E%E3%83%B3%E2%80%93%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E6%B3%95)
+
+### 文
+
+
+### コード
+
+07_dijkstras_algorithm
+```rb
+@graph = {
+  start:{ a:   2,
+          b:   6 },
+  a:    { fin: 1 },
+  b:    { a:   3,
+          fin: 5 },
+  fin:  {}
+}
+
+@costs = {
+  a: 6,
+  b: 2,
+  fin: Float::INFINITY
+}
+
+@parents = {
+  a:  :start,
+  b:  :start,
+  fin: nil
+}
+
+@processed = []
+
+def find_lowest_cost_node(costs)
+  min = @costs.select{|node,cost| !@processed.include?(node)}.
+               min_by{|node, cost| cost}
+  min[0] if !min.nil?
+end
+
+def dijkstra
+  node = find_lowest_cost_node(@costs)
+  while !node.nil?
+    cost = @costs[node]
+    neighbors = @graph[node]
+    neighbors.each do |n, c|
+      new_cost = cost + neighbors[n]
+      if @costs[n] > new_cost
+        @costs[n]   = new_cost
+        @parents[n] = node
+      end
+    end
+    @processed << node
+    node = find_lowest_cost_node(@costs)
+  end
+end
+
+dijkstra
+puts @costs
+puts @parents
+```
+
+## ch8
 
 ### 単語
 
