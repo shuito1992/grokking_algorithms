@@ -485,7 +485,7 @@ search("you")
 * `put down` 置く
 * `acyclic` 非環式の
 * `I've been meaning to` ずっと～しようと思っていた
-* `dough` パン生地、金銭
+* `dough [dóu]` パン生地、金銭
 * `red flag` (危険・警戒・停止信号としての)赤旗
 * `Bellman–Ford algorithm` [ベルマン–フォード法](https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%9E%E3%83%B3%E2%80%93%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E6%B3%95)
 
@@ -563,6 +563,7 @@ puts @parents
 * `set-covering problem` [集合被覆問題](https://ja.wikipedia.org/wiki/%E9%9B%86%E5%90%88%E8%A2%AB%E8%A6%86%E5%95%8F%E9%A1%8C)
 * `clique` (排他的な)徒党、派閥
 * `adjacent` 隣接した
+* `optimum` 最適
 
 ### 文
 
@@ -605,4 +606,44 @@ puts final_stations
 ```
 
 ## ch9
+
+### 単語
+
+* `address` 説明する、処理する
+* `FAQ` Frequently Asked Questions
+* `granularity [gr'ænjʊlˈærəṭi]` 粒度
+* `lentils` レンズ豆
+* `runs out` なくなる、尽きる
+* `quinoa` キノア
+* `itinerary [aitínərèri]` 旅程
+* `discrete` 個別の、離散の
+* `axis [ǽksis]` 軸。複数形は`axes [ˈæksiːz]`
+* `whew [hwjuː]` うわー
+* `strand` より糸
+* `cure` 治療
+* `sclerosis` 硬化症
+* `word wrap` 文章の折り返し
+
+### 文
+
+p177
+> Is it possible that the solution will require  more than two sub-knapsacks?
+
+ここの説明を完全に理解できていない。
+
+p181
+> Computer scientists are a fun bunch!
+
+### コード
+
+## ch10
+
+### 単語
+
+* `extraction` 抽出
+
+### 文
+
+
+### コード
 
