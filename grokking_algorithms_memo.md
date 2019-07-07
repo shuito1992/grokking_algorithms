@@ -640,10 +640,27 @@ p181
 
 ### 単語
 
+* `classification` 分類
 * `extraction` 抽出
+* `coordinate` 座標
+* `cheesy` 安っぽい
+* `choosy` よいものだけを選ぶ、好みのうるさい
+* `loaf/loaves [lóuf]` 大きなパンのひと塊
+* `conservative` 保守的な
+* `skewed` 歪んだ
+* `OCR` optical character recognition
+* `optical` 視覚的な
+* `naive` 素朴な
 
 ### 文
 
-
 ### コード
 
+## ch11
+
+### 単語
+
+
+
+
+### 文
