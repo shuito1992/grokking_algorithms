@@ -660,7 +660,24 @@ p181
 
 ### 単語
 
-
-
+* `frequency` 周波数
+* `treble` 高音
+* `note` 音、音符
+* `run into` ぶつかる、突き当たる
+* `bloom` 花
+* `Reddit` 英語圏のウェブサイト。ニュース記事、画像のリンクやテキストを投稿し、コメントをつけることが可能。
+* `malicious` 悪意のある
+* `SHA` [Secure Hash Algorithm](https://ja.wikipedia.org/wiki/Secure_Hash_Algorithm)
+* `foolproof` 絶対確実
+* `Scribd` デジタルライブラリ、電子書籍、オーディオブック購読サービス
+* `cipher [sáifər]` 暗号、エンコード
+* `heck` 一体、とんでもない
+* `brute-force` 強引な
+* `gibberish` ちんぷんかんぷん
+* `tote` 運ぶ、背負う
+* `blow one's mind` 度肝を抜く
+* `simplex method` [シンプレックス法](https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9%E6%B3%95)
 
 ### 文
+
+[Bloom filters](https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A0%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF)がよくわからない。
