@@ -1,11 +1,5 @@
 # grokking_algorithmsメモ
 
-## 進捗
-
-ch4~ p53
-
-(注)全 11 Chapters
-
 ## ch0
 
 ### 単語
@@ -42,8 +36,12 @@ ch4~ p53
 pxv
 >  Instead of writing symbol soup, my goal is to make it easy for you to visualize these concepts.
 
+=> 記号を並べ立てるのではなく、
+
 pxv
 >  Also, at the risk of stating the obvious, I’m a visual learner.
+
+=> くどいようですが、分かりきったことを言いますが
 
 ## ch1
 
@@ -59,15 +57,8 @@ pxv
 * `neatly` きちんと、ぴったり
 * `takeaway` 持ち帰り
 * `collapse` 崩壊する
+* `appalling [əpɔ́ːliŋ]` 驚愕の、最悪の
 * `recap [ríːkæp]` 要約する
-
-### 文
-
-p17
-> This is a famous problem in computer science, because its growth is appalling and some very smart people think it can’t be improved.
-
-p19
-> One final note: if you’re an advanced reader, check out binary search trees! There’s a brief description of them in the last chapter.
 
 ### コード
 
@@ -117,8 +108,6 @@ puts binary_search(list, -1).inspect #=> nil
 * `in a (flat) spin` 混乱状態で
 * `gist` 要旨
 * `strewn [ˈstrʊən]` ばらばらの、strew(撒き散らす)の過去分詞
-
-### 文
 
 ### コード
 
@@ -170,13 +159,12 @@ p selection_sort([5, 3, 6, 2, 10])
 p42
 > Suppose you’re throwing a barbecue. You keep a todo list for the barbecue, in the form of a stack of sticky notes.
 
+=> バーベキューの準備をしているとしましょう。
+
 p43
 > `print` is a function in Python, but to make things easier for this example, we’re pretending it isn’t. Just play along.
 
 => `print`はメソッド呼び出しだが、その分のコールスタックは無視して説明しているということ。
-
-p44
-> Now that you’re done with the `greet2` function, you’re back to the greet function, and you pick up where you left off.
 
 ### コード
 
@@ -280,7 +268,9 @@ fact(5)
 ### 文
 
 p54
->  If you find the biggest box that will work for this size, that will be the biggest box  that will work for the entire farm.
+>  If you find the biggest box that will work for this size, that will be the biggest box that will work for the entire farm.
+
+=> このサイズに合った最大のボックスを見つけたら、それが農場全体にとっても最適な最大のボックスになるでしょう。
 
 ### コード
 
@@ -382,6 +372,8 @@ quicksort([5,2,1,7,10,9,11,100,17])
 p75
 > Let’s put on our data structure hats.
 
+=> `put on one's hats` 〜の立場に立って考える
+
 ### コード
 
 05_vote
@@ -425,6 +417,7 @@ end
 * `breadth [brédθ]` 幅
 * `radiate` 放射状に伸びる
 * `queue` 列、並ぶ
+* `double-ended` 両端の
 * `vertice` 頂点
 
 
@@ -437,6 +430,8 @@ p98
 
 p 107
 >  In Python, you use the double-ended queue (deque) function for this:
+
+=> 両端キューであるdequeを使います。
 
 ### コード
 
@@ -488,9 +483,6 @@ search("you")
 * `dough [dóu]` パン生地、金銭
 * `red flag` (危険・警戒・停止信号としての)赤旗
 * `Bellman–Ford algorithm` [ベルマン–フォード法](https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%AB%E3%83%9E%E3%83%B3%E2%80%93%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89%E6%B3%95)
-
-### 文
-
 
 ### コード
 
@@ -567,7 +559,7 @@ puts @parents
 
 ### 文
 
-p
+p152
 > *EXERCISES*
 > For each of these algorithms, say whether it’s a greedy algorithm or not.
 > * 8.3 Quicksort
@@ -627,12 +619,14 @@ puts final_stations
 ### 文
 
 p177
-> Is it possible that the solution will require  more than two sub-knapsacks?
+> Is it possible that the solution will require more than two sub-knapsacks?
 
-ここの説明を完全に理解できていない。
+=> ダイナミックプログラミングでは、多くとも2つのサブプロブレムを使うことしかないが、そのサブプロブレムが下位のサブプロブレムを内包していることはある。
 
 p181
 > Computer scientists are a fun bunch!
+
+=> コンピュータ科学者というのは愉快な連中なのです。
 
 ### コード
 
@@ -651,10 +645,6 @@ p181
 * `OCR` optical character recognition
 * `optical` 視覚的な
 * `naive` 素朴な
-
-### 文
-
-### コード
 
 ## ch11
 
@@ -681,3 +671,8 @@ p181
 ### 文
 
 [Bloom filters](https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A0%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF)がよくわからない。
+
+p213
+> Just like bloom filters, it won’t give you an exact answer, but it comes very close and uses only a fraction of the memory a task like this would otherwise take.
+
+=> ブルームフィルタと同様に、正確な答えは返さないものの、非常に近い答えを返します。そして本来ならこのようなタスクに必要となるメモリのごく一部しか使いません。
